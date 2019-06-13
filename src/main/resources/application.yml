@@ -1,0 +1,22 @@
+server:
+  context-path: /
+  port: 8082
+
+
+spring:
+  datasource:
+    master:
+      jdbc-url: jdbc:mysql://localhost:3306/security
+      username: root
+      password: sandal
+      driver-class-name: com.mysql.jdbc.Driver
+    slave1:
+      jdbc-url: jdbc:mysql://localhost:3306/spingboot
+      username: root   # 只读账户
+      password: sandal
+      driver-class-name: com.mysql.jdbc.Driver
+    slave2:
+      jdbc-url: jdbc:mysql://localhost:3306/vgo
+      username: root   # 只读账户
+      password: sandal
+      driver-class-name: com.mysql.jdbc.Driver
