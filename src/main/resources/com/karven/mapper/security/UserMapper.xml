@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.karven.mapper.security.UserMapper">
+
+    <select id="loadUserByUsername" resultType="com.karven.entity.user.User">
+        select id,username,realname,password,createDate,lastLoginTime,enabled,accountNonExpired,accountNonLocked,credentialsNonExpired
+        from sys_user where username=#{username}
+    </select>
+
+    <!--查询当前用户拥有的权限-->
+    <select id="findPermissionByUsername" parameterType="string" resultType="com.karven.entity.user.Permission">
+        select per.* from
+            sys_user user
+            inner join sys_user_role ur on user.id = ur.user_id
+            inner join sys_role_permission rp on ur.role_id=rp.role_id
+            inner join sys_permission per on rp.permission_id=per.id
+            where user.username = #{value}
+    </select>
+</mapper>

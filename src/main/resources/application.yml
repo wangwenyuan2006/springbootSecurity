@@ -1,22 +1,31 @@
 server:
   context-path: /
   port: 8082
-
-
 spring:
   datasource:
-    master:
-      jdbc-url: jdbc:mysql://localhost:3306/security
-      username: root
-      password: sandal
-      driver-class-name: com.mysql.jdbc.Driver
-    slave1:
-      jdbc-url: jdbc:mysql://localhost:3306/spingboot
-      username: root   # 只读账户
-      password: sandal
-      driver-class-name: com.mysql.jdbc.Driver
-    slave2:
-      jdbc-url: jdbc:mysql://localhost:3306/vgo
-      username: root   # 只读账户
-      password: sandal
-      driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security
+    username: root
+    password: sandal
+    type: com.alibaba.druid.pool.DruidDataSource
+#给Mybatis起别名，这个包下的实体类，自动会起别名
+mybatis:
+  type-aliases-package: com.karven.example.entity
+
+#spring:
+#  datasource:
+#    master:
+#      jdbc-url: jdbc:mysql://localhost:3306/security
+#      username: root
+#      password: sandal
+#      driver-class-name: com.mysql.jdbc.Driver
+#    slave1:
+#      jdbc-url: jdbc:mysql://localhost:3306/spingboot
+#      username: root   # 只读账户
+#      password: sandal
+#      driver-class-name: com.mysql.jdbc.Driver
+#    slave2:
+#      jdbc-url: jdbc:mysql://localhost:3306/vgo
+#      username: root   # 只读账户
+#      password: sandal
+#      driver-class-name: com.mysql.jdbc.Driver

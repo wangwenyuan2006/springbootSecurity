@@ -1,4 +1,4 @@
-package com.karven.security;
+package com.karven.config;
 
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;

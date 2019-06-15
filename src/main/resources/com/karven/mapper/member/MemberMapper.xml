@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.karven.mapper.member.MemberMapper">
+    <insert id="insert" parameterType="com.karven.entity.member.Member">
+        insert into member(name) values(#{name})
+    </insert>
+
+    <!--<select id="queryUserByUsername" resultType="com.karven.entity.user.User">
+        select id,username,roles from vgo_user_t where username=#{username}
+    </select>
+
+
+    <select id="queryUser" resultType="com.karven.entity.user.User">
+        select id,username,password from vgo_user_t
+    </select>
+
+    <select id="queryUserById" resultType="com.karven.entity.user.User">
+        select id,username,password from vgo_user_t where id=#{value}
+    </select>
+
+    <update id="updateUser" parameterType="com.karven.entity.user.User">
+        update vgo_user_t set username=#{username},password=#{password} where id=#{id}
+    </update>
+
+    <delete id="deleteUser">
+        delete from vgo_user_t where id=#{value}
+    </delete>-->
+</mapper>
